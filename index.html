@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clicxo — Solutions tech simples pour tout le monde</title>
+  <meta name="description" content="Clicxo répond à toutes vos questions tech : dépannage iPhone, Android, Windows et PC. Des guides simples, clairs et efficaces." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://clicxo.netlify.app/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    /* Styles spécifiques à l'accueil uniquement */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 8rem 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0,229,255,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255,77,109,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 50% 100%, rgba(181,255,77,0.05) 0%, transparent 50%);
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 800; line-height: 1.05;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--electric) 0%, var(--lime) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero > .badge { animation: fadeUp 0.6s ease both; }
+    .hero p { max-width: 560px; margin: 1.5rem auto 2.5rem; font-size: 1.15rem; color: var(--muted); line-height: 1.7; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+    .search-wrap { margin-top: 3rem; width: 100%; max-width: 560px; animation: fadeUp 0.6s 0.4s ease both; }
+    .search-wrap input {
+      width: 100%; padding: 1rem 1.5rem;
+      background: var(--card); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; color: var(--text); font-size: 1rem;
+      font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s;
+    }
+    .search-wrap input:focus { border-color: var(--electric); }
+    .search-wrap input::placeholder { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Clicxo</a>
+    <ul class="nav-links">
+      <li><a href="#categories">Catégories</a></li>
+      <li><a href="#articles">Articles</a></li>
+      <li><a href="/apropos.html">À propos</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <span class="badge">✦ Dépannage tech simplifié</span>
+    <h1>Votre tech enfin<br /><span>sous contrôle</span></h1>
+    <p>Pannes, bugs, questions sur iPhone, Android, Windows ou PC — Clicxo vous explique tout, simplement et sans jargon.</p>
+    <div class="hero-cta">
+      <a href="#articles" class="btn-primary">Voir les guides</a>
+      <a href="#categories" class="btn-secondary">Parcourir les catégories</a>
+    </div>
+    <div class="search-wrap">
+      <input type="text" placeholder="Rechercher une solution... ex: iPhone bloqué, WiFi coupé" />
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <div class="section" id="categories">
+    <p class="section-label">Explorer</p>
+    <h2 class="section-title">Toutes les catégories</h2>
+    <div class="categories">
+      <a href="/categorie-iphone.html" class="cat-card">
+        <span class="cat-icon">📱</span>
+        <h3>iPhone & iOS</h3>
+        <p>Pannes, mises à jour, batterie, stockage et bien plus.</p>
+      </a>
+      <a href="/categorie-android.html" class="cat-card">
+        <span class="cat-icon">🤖</span>
+        <h3>Android</h3>
+        <p>Samsung, Xiaomi, Google Pixel — tous les problèmes résolus.</p>
+      </a>
+      <a href="/categorie-windows.html" class="cat-card">
+        <span class="cat-icon">💻</span>
+        <h3>Windows & PC</h3>
+        <p>Lenteurs, erreurs système, mises à jour bloquées.</p>
+      </a>
+      <a href="/categorie-wifi.html" class="cat-card">
+        <span class="cat-icon">📡</span>
+        <h3>WiFi & Réseau</h3>
+        <p>Connexion coupée, box lente, problèmes de signal.</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section" id="articles">
+    <p class="section-label">Guides récents</p>
+    <h2 class="section-title">Les dernières solutions</h2>
+    <div id="articles-container" class="articles-grid">
+      <!-- Chargé dynamiquement depuis articles.json -->
+    </div>
+  </div>
+
+  <footer>
+    <a href="/" class="logo">Clicxo</a>
+    <p>Clicxo est un site d'information technique généraliste. Les guides proposés sont fournis à titre indicatif. En cas de panne matérielle grave, consultez un technicien qualifié.</p>
+    <div class="footer-links">
+      <a href="/apropos.html">À propos</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      
+    </div>
+  </footer>
+
+  <script>
+    // Chargement des articles depuis articles.json
+    fetch('/data/articles.json')
+      .then(r => r.json())
+      .then(articles => {
+        const container = document.getElementById('articles-container');
+        container.innerHTML = articles.map(a => `
+          <a href="${a.url}" class="article-card ${a.theme || ''}">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <span class="article-tag">${a.categoryLabel}</span>
+              <h3>${a.title}</h3>
+              <p>${a.description}</p>
+              <div class="article-meta">
+                <span>${a.readingTime} de lecture</span>
+                <span>Guide complet</span>
+              </div>
+            </div>
+          </a>`).join('');
+      });
+  </script>
+
+</body>
+</html>

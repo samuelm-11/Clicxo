@@ -1,0 +1,8 @@
+{
+  "name": "clicxo",
+  "version": "1.0.0",
+  "description": "Site Clicxo — guides tech simples",
+  "scripts": {
+    "build": "node generate-sitemap.js"
+  }
+}

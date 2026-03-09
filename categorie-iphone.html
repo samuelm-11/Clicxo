@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guides iPhone & iOS — Clicxo</title>
+  <meta name="description" content="Tous les guides Clicxo pour résoudre vos problèmes iPhone et iOS : batterie, écran noir, mises à jour, stockage et bien plus." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://clicxo.netlify.app/categorie-iphone.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .cat-hero { padding: 5rem 2rem 3rem; text-align: center; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,229,255,0.07), transparent); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .cat-hero .icon { font-size: 4rem; display: block; margin-bottom: 1rem; }
+    .cat-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem,5vw,3rem); font-weight: 800; margin-bottom: 1rem; }
+    .cat-hero h1 span { background: linear-gradient(135deg, var(--electric), var(--lime)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .cat-hero p { color: var(--muted); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
+    .cat-nav { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+    .cat-nav a { background: var(--card); border: 1px solid rgba(255,255,255,0.08); color: var(--muted); text-decoration: none; font-size: 0.85rem; padding: 0.5rem 1.1rem; border-radius: 999px; transition: all 0.2s; }
+    .cat-nav a:hover, .cat-nav a.active { border-color: var(--electric); color: var(--electric); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Clicxo</a>
+    <ul class="nav-links">
+      <li><a href="/#categories">Catégories</a></li>
+      <li><a href="/#articles">Articles</a></li>
+      <li><a href="/apropos.html">À propos</a></li>
+    </ul>
+  </nav>
+
+  <header class="cat-hero">
+    <span class="icon">📱</span>
+    <h1>Guides <span>iPhone & iOS</span></h1>
+    <p>Tous nos guides pour résoudre vos problèmes iPhone : batterie, écran, mises à jour, stockage et bien plus.</p>
+    <nav class="cat-nav">
+      <a href="/categorie-iphone.html" class="active">📱 iPhone</a>
+      <a href="/categorie-android.html">🤖 Android</a>
+      <a href="/categorie-windows.html">💻 Windows</a>
+      <a href="/categorie-wifi.html">📡 WiFi</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <p class="section-label">iPhone & iOS</p>
+    <h2 class="section-title">Tous les guides</h2>
+    <div id="articles-container" class="articles-grid"></div>
+  </div>
+
+  <footer>
+    <a href="/" class="logo">Clicxo</a>
+    <p>Guides tech simples en français.</p>
+    <div class="footer-links">
+      <a href="/apropos.html">À propos</a>
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/politique-confidentialite.html">Confidentialité</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    fetch('/data/articles.json')
+      .then(r => r.json())
+      .then(articles => {
+        const filtered = articles.filter(a => a.category === 'iphone');
+        const container = document.getElementById('articles-container');
+        if (filtered.length === 0) {
+          container.innerHTML = '<p style="color:var(--muted)">Aucun article disponible pour le moment.</p>';
+          return;
+        }
+        container.innerHTML = filtered.map(a => `
+          <a href="${a.url}" class="article-card ${a.theme || ''}">
+            <div class="article-thumb"></div>
+            <div class="article-body">
+              <span class="article-tag">${a.categoryLabel}</span>
+              <h3>${a.title}</h3>
+              <p>${a.description}</p>
+              <div class="article-meta">
+                <span>${a.readingTime} de lecture</span>
+                <span>Guide complet</span>
+              </div>
+            </div>
+          </a>`).join('');
+      });
+  </script>
+</body>
+</html>
