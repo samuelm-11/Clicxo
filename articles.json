@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Pourquoi la batterie de mon iPhone se vide aussi vite ?",
+    "slug": "iphone-batterie-se-vide-vite",
+    "url": "/articles/iphone-batterie-se-vide-vite.html",
+    "category": "iphone",
+    "categoryLabel": "iPhone",
+    "description": "5 causes fréquentes et leurs solutions pas à pas pour retrouver une autonomie normale.",
+    "date": "2026-03-09",
+    "readingTime": "5 min",
+    "theme": "electric"
+  },
+  {
+    "title": "Mon téléphone Android chauffe trop : que faire ?",
+    "slug": "android-surchauffe",
+    "url": "/articles/android-surchauffe.html",
+    "category": "android",
+    "categoryLabel": "Android",
+    "description": "Identifier l'application responsable et éviter les dommages matériels en quelques étapes.",
+    "date": "2026-03-09",
+    "readingTime": "4 min",
+    "theme": "coral"
+  },
+  {
+    "title": "Windows démarre lentement : 7 solutions efficaces",
+    "slug": "windows-lent-au-demarrage",
+    "url": "/articles/windows-lent-au-demarrage.html",
+    "category": "windows",
+    "categoryLabel": "Windows",
+    "description": "De la désactivation des programmes au démarrage jusqu'au nettoyage du disque.",
+    "date": "2026-03-09",
+    "readingTime": "6 min",
+    "theme": "lime"
+  },
+  {
+    "title": "Pourquoi mon WiFi se coupe tout seul ?",
+    "slug": "wifi-coupe-souvent",
+    "url": "/articles/wifi-coupe-souvent.html",
+    "category": "wifi",
+    "categoryLabel": "WiFi & Réseau",
+    "description": "Diagnostiquer si le problème vient de votre box, de votre appareil ou du signal.",
+    "date": "2026-03-09",
+    "readingTime": "4 min",
+    "theme": "electric"
+  },
+  {
+    "title": "Écran noir sur iPhone : comment le redémarrer ?",
+    "slug": "iphone-ecran-noir",
+    "url": "/articles/iphone-ecran-noir.html",
+    "category": "iphone",
+    "categoryLabel": "iPhone",
+    "description": "Les gestes exacts selon votre modèle (iPhone 6 à iPhone 16) pour sortir du gel.",
+    "date": "2026-03-09",
+    "readingTime": "3 min",
+    "theme": "coral"
+  },
+  {
+    "title": "Mon PC chauffe et s'éteint tout seul : les causes",
+    "slug": "pc-surchauffe",
+    "url": "/articles/pc-surchauffe.html",
+    "category": "windows",
+    "categoryLabel": "Windows",
+    "description": "Ventilation, pâte thermique, poussière — guide de diagnostic complet.",
+    "date": "2026-03-09",
+    "readingTime": "5 min",
+    "theme": "lime"
+  }
+]
